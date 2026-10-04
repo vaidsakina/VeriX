@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VeriX | Misinformation Detection System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='chatbot.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="top-header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            V
+        </div>
+
+        <div>
+
+            <h1>VeriX</h1>
+
+            <span>
+                AI-Assisted Misinformation Detection
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="status">
+
+        <span class="status-dot"></span>
+
+        AI System Ready
+
+    </div>
+
+</header>
+
+
+
+<main class="main-content">
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <p class="small-title">
+            "Verify Before You Trust"
+        </p>
+
+
+        <p>
+            Analyze text, images, audio, and videos for
+            potentially misleading or false information
+            using AI-assisted analysis.
+        </p>
+
+    </section>
+
+
+
+    <!-- Main Analysis Card -->
+
+    <section class="analysis-card">
+
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>
+                    Analyze Content
+                </h3>
+
+                <p>
+                    Enter a claim or upload content you want
+                    VeriX to analyze.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Text Analysis -->
+
+        <div class="text-section">
+
+            <label for="claim-input">
+                Enter a claim or message
+            </label>
+
+            <textarea
+                id="claim-input"
+                placeholder="Example: Drinking warm water can cure every viral infection..."
+            ></textarea>
+
+            <button
+                id="text-verify-btn"
+                class="primary-btn"
+            >
+                Analyze Claim
+            </button>
+
+        </div>
+
+
+
+        <!-- Divider -->
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+
+
+        <!-- File Upload -->
+
+        <div class="upload-section">
+
+            <label
+                class="upload-box"
+                for="file-input"
+            >
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h4>
+                    Upload Image, Audio or Video
+                </h4>
+
+                <p>
+                    Click to choose a file
+                </p>
+
+                <span class="supported">
+                    JPG • PNG • MP3 • WAV • MP4 • MOV
+                </span>
+
+            </label>
+
+
+            <input
+                type="file"
+                id="file-input"
+                accept="image/*,audio/*,video/*"
+                hidden
+            >
+
+
+            <div
+                id="selected-file"
+                class="selected-file hidden"
+            ></div>
+
+
+            <button
+                id="verify-btn"
+                class="primary-btn"
+                disabled
+            >
+                Analyze Uploaded Content
+            </button>
+
+        </div>
+
+
+
+        <!-- Loading -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <div>
+
+                <strong>
+                    VeriX is analyzing...
+                </strong>
+
+                <p>
+                    Please wait while the AI examines
+                    the content.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AI Result -->
+
+        <div
+            id="result-section"
+            class="result-section hidden"
+        >
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="result-label">
+                        AI ANALYSIS RESULT
+                    </span>
+
+                    <h3 id="result-title">
+                        Analysis Complete
+                    </h3>
+
+                </div>
+
+
+                <div
+                    id="result-icon"
+                    class="result-icon"
+                >
+                    ✓
+                </div>
+
+            </div>
+
+
+            <div
+                id="result-content"
+                class="result-content"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Database References -->
+
+        <div
+            id="reference-section"
+            class="reference-section hidden"
+        >
+
+            <div class="reference-header">
+
+                <div>
+
+                    <span class="reference-label">
+                        LOCAL KNOWLEDGE BASE
+                    </span>
+
+                    <h3>
+                        Related Reference Records
+                    </h3>
+
+                    <p>
+                        These records were found in VeriX's
+                        local SQLite database.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="reference-list"
+                class="reference-list"
+            ></div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Information -->
+
+    <section class="info-section">
+
+        <div class="info-icon">
+            i
+        </div>
+
+        <div>
+
+            <h4>
+                Important
+            </h4>
+
+            <p>
+                VeriX provides AI-assisted analysis.
+                It does not guarantee that information is
+                true or false. Important claims should always
+                be verified using reliable sources before
+                being shared.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        © 2026 VeriX — AI-Assisted Misinformation
+        Detection System
+    </p>
+
+</footer>
+
+
+
+<script
+    src="{{ url_for('static', filename='chatbot.js') }}"
+></script>
+
+
+</body>
+
+</html>
